@@ -1,15 +1,19 @@
 package main
 
 import (
-	"fmt"
 	"geo_location_change/excel"
+	"geo_location_change/utils"
+	"log"
 )
 
 func main() {
+	if err := utils.InitLog(); err != nil {
+		panic(err)
+	}
 	count, err := excel.AddBaiduLink("test.xlsx")
 	if err != nil {
-		fmt.Printf("success number: %d, err: %s", count, err)
+		log.Printf("success number: %d, err: %s\n", count, err)
 		return
 	}
-	fmt.Printf("success number: %d", count)
+	log.Printf("success number: %d\n", count)
 }

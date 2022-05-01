@@ -1,13 +1,13 @@
 package core
 
 import (
-	"fmt"
 	"geo_location_change/utils"
+	"log"
 )
 
 func TencentURLToBaiduAPI(tencentURL string) string {
 	location := utils.GetLocFromStr(tencentURL)
 	apiURL := TransformBaiduAPI(location)
-	fmt.Println(apiURL)
+	log.Println(apiURL + "\n")
 	return apiURL
 }
